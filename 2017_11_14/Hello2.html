@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script type="text/javascript">
+
+			//6个数字不重复
+
+			//1.构建产生颜色的素组对象
+			var colors = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+
+			//2.随机产生颜色
+			function randomColor() {
+				var str = "#";
+
+				for(var i = 0; i < 6; i++) {
+					
+					var c = colors[Math.floor(Math.random() * colors.length)];
+
+					if(str.indexOf(c) != -1) {
+						i--;
+						continue;
+					}
+
+					str += c;
+				}
+
+				return str;
+			}
+
+			//3.定时每隔1000，取一次颜色
+			function page_init() {
+
+				setInterval("creatSpanColor()", 1000);
+			}
+
+			//4.链接到具体产生的标签（控件）
+			function creatSpanColor() {
+				var colorVal = randomColor();
+				document.body.innerHTML += "<span style='float:left;margin-left:5px;background-color:" + colorVal + "'>" + colorVal + "</span>";
+
+			}
+		</script>
+
+	</head>
+
+	<body onload="page_init()">
+	</body>
+
+</html>
