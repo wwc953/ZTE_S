@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			window.onload = pageload;
+
+			function pageload() {
+				var liObjs = document.getElementsByTagName("li");
+
+				for(var i = 0; i < liObjs.length; i++) {
+					liObjs[i].onclick = function() {
+
+						alert(this.innerHTML);
+					}
+				}
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>aa</li>
+			<li>bb</li>
+			<li>cc</li>
+
+		</ul>
+	</body>
+
+</html>

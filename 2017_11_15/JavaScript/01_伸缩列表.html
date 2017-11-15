@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			#menu {
+				background-color: #0099aa;
+				width: 200px;
+				border: 1px solid #ca9cbb;
+			}
+			
+			p {
+				text-align: center;
+				font-family: 隶书;
+				font-size: 22px;
+				color: black;
+			}
+			
+			ul li {
+				list-style: none;
+				width: 120px;
+				height: 30px;
+				line-height: 30px;
+				color: brown;
+				font-family: 楷体;
+				font-size: 18px;
+				font-weight: bold;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function page_load() {
+				//js通过document 获取页面的元素，getElementById(),获取单个
+				var pObjs = document.getElementsByTagName("p")[0];
+				//console.log(typeof pObjs);
+
+				var ulObjs = document.getElementsByTagName("ul")[0];
+
+				pObjs.onclick = ul_click;
+				ulObjs.onmouseover = ul_click2;
+
+			}
+
+			function ul_click() {
+				var ulObj = document.getElementsByTagName("ul")[0];
+
+				if(ulObj.style.display == "none") {
+					ulObj.style.display = "block";
+				} else {
+					ulObj.style.display = "none";
+				}
+
+			}
+
+			//			function ul_mouseout() {
+			//				document.getElementsByTagName("p")[0].style.backgroundColor="#0099aa";
+			//			}
+			//			function ul_mouseover() {
+			//				document.getElementsByTagName("p")[0].style.backgroundColor="white";
+			//			}
+			//			
+			function ul_click2() {
+				var liObjs = document.getElementsByTagName("li");
+
+				for(var i = 0; i < liObjs.length; i++) {
+					liObjs[i].onmouseout = function() {
+						this.style.backgroundColor="#0099aa";
+					}
+					liObjs[i].onmouseover = function() {
+						this.style.backgroundColor="red";
+					}
+				}
+			}
+		</script>
+
+	</head>
+
+	<body onload="page_load()">
+		<div id="menu">
+			<p>员工信息报表分布</p>
+			<ul>
+				<li>员工性别图表</li>
+				<li>员工学历图表</li>
+				<li>员工籍贯图表</li>
+			</ul>
+
+		</div>
+	</body>
+
+</html>
