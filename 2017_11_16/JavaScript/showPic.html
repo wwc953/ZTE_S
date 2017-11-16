@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			img {
+				width: 50px;
+				height: 50px;
+				margin: 10px;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function init() {
+
+				var list = [{
+					"id": "1",
+					"img": "img/pic1.jpg"
+				}, {
+					"id": "2",
+					"img": "img/pic2.jpg"
+				}, {
+					"id": "3",
+					"img": "img/pic3.jpg"
+				}];
+			
+
+			for(var i = 0; i < list.length; i++) {
+				console.log(list[i].id + "," + list[i].img);
+
+				document.getElementById("showPic").innerHTML += "<img src='" + list[i].img + "'/><span>" + list[i].id + "</span>";
+
+			}
+
+			}
+		</script>
+
+	</head>
+
+	<body onload="init()">
+
+		<div id="showPic">
+
+		</div>
+
+	</body>
+
+</html>

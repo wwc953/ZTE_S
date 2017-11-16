@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style  type="text/css">
+			
+			body{
+				background-color: #0099AA;
+				
+			}
+		
+		
+			#boxview{
+				float:left;
+				width: 280px;
+				background-color: #CA9CBB;
+		
+			}
+			
+			ul{
+				width: 280px;
+				
+			}
+				ul  li{
+				float: left;
+				width: 100px;
+				list-style: none;
+				border: 1px  solid #aaffcc;
+				text-align: center;
+				margin: 5px 5px 5px 5px;
+				background-color: #99aacc;
+				
+			}
+			
+			#rightdiv{
+				float:left;
+				width: 400px;
+				height: 200px;
+				margin-left: 100px;
+				background-color: #A52A2A;
+				margin-top: 100px;
+			}
+			
+			.overstyle{
+				
+				background-color: blue;
+				border: 1px  solid  crimson;
+				color: red;
+		
+			}
+			
+		</style>
+		<script  type="text/javascript">
+			
+			function page_load()
+			{				
+				var arrays=["111","222","333","444","555","666","777","888","999","101010","11-11-11","12-12-12"];
+				
+				//获取最外面的div
+				var  divObj=document.getElementById("boxview");
+			
+			    var liObjs=divObj.getElementsByTagName("li");
+			   
+			    var rightdivObj =document.getElementById("rightdiv");
+			   
+			   for(var i=0;i<liObjs.length;i++)
+			   {
+			   	  liObjs[i].count=i;
+			   	  
+			   	  liObjs[i].onmouseover=function()
+			   	  {
+			   	  	 //我把每一个li的背景样式全部清空
+			   	  	  for(var i=0;i<liObjs.length;i++)
+			   	  	  {
+			   	  	   	//liObjs[i].style.backgroundColor="";
+			   	  	   	liObjs[i].className="";
+			   	  	   		 
+			   	  	  }
+			   	  	  // this.style.backgroundColor="blue";
+			   	  	  this.className="overstyle";
+			   	  	 
+			   	  	  rightdivObj.innerHTML="<h2>"+(this.count+1)+"月份的信息"+"</h2><p>"+arrays[this.count]+"</p>";
+			   	  }
+			   	  
+			   }
+			
+			}
+			
+			
+		</script>
+	</head>
+	<body  onload="page_load()">
+	
+		<div  id="boxview">
+			<ul>
+				<li>
+					<h6>1月份</h6>
+				</li>
+				
+				<li>
+					<h6>2月份</h6>
+				</li>
+				<li>
+					<h6>3月份</h6>
+				</li>
+				<li>
+					<h6>4月份</h6>
+				</li>
+				<li>
+					<h6>5月份</h6>
+				</li>
+				<li>
+					<h6>6月份</h6>
+				</li>
+				<li>
+					<h6>7月份</h6>
+				</li>
+				<li>
+					<h6>8月份</h6>
+				</li>
+				<li>
+					<h6>9月份</h6>
+				</li>
+				<li>
+					<h6>10月份</h6>
+				</li>
+				<li>
+					<h6>11月份</h6>
+				</li>
+				<li>
+					<h6>12月份</h6>
+				</li>
+				
+			</ul>
+			
+		</div>
+		
+		<div  id="rightdiv">
+			
+		</div>
+	
+	</body>
+</html>
