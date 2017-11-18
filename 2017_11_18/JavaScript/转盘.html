@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			#ho_div {
+				width: 450px;
+			}
+			
+			#mydiv {
+				float: left;
+				width: 100%;
+				background-color: #99AACC;
+			}
+			
+			#res {
+				width: 100%;
+				height: 70px;
+				float: left;
+				text-align: center;
+			}
+			
+			ul {
+				width: 350px;
+			}
+			
+			ul li {
+				float: left;
+				width: 100px;
+				list-style: none;
+				border: 1px solid #0000FF;
+				text-align: center;
+				margin: 5px 5px 5px 5px;
+				background-color: #CA9CBB;
+			}
+			
+			#btn {
+				display: block;
+				width: 100px;
+				height: 63px;
+				background-color: #CA9CBB;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function begin() {
+
+				var lis = document.getElementsByTagName("li");
+				//var liObjs = document.getElementsByTagName("li");
+				var liObjs = [lis[0], lis[1], lis[2], lis[5], lis[8], lis[7], lis[6], lis[3]];
+
+				var resdiv = document.getElementById("res");
+				var len = liObjs.length;
+				//alert(len);
+
+				var number = 10 + Math.floor(Math.random() * 20);
+				//alert(number);
+				
+				var i = 0;//控制结束
+
+				var interval = setInterval(function() {
+
+					for(var j = 0; j < len; j++) {
+						liObjs[j].style.backgroundColor = "";
+					}
+
+					if(i < number) {
+						i++;
+						liObjs[i % len].style.backgroundColor = "red";
+
+						if(i == number) {
+							clearInterval(interval);
+							
+							//alert(liObjs[i % len].innerText);
+							resdiv.innerHTML = "获得" + liObjs[i % len].innerText + "等奖";
+						}
+					}
+				}, 100);
+
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="ho_div">
+			<div id="mydiv">
+				<ul>
+					<li>
+						<h6>1</h6>
+					</li>
+
+					<li>
+						<h6>2</h6>
+					</li>
+					<li>
+						<h6>3</h6>
+					</li>
+					<li>
+						<h6>4</h6>
+					</li>
+					<!--<li>
+					<h6>5</h6>
+				</li>-->
+					<li>
+						<button onclick="begin()" id="btn">开始抽奖</button>
+					</li>
+
+					<li>
+						<h6>6</h6>
+					</li>
+
+					<li>
+						<h6>7</h6>
+					</li>
+					<li>
+						<h6>8</h6>
+					</li>
+					<li>
+						<h6>9</h6>
+					</li>
+
+				</ul>
+			</div>
+
+			<!--<button onclick="begin()" id="btn">开始抽奖</button>-->
+
+			<div id="res"></div>
+		</div>
+	</body>
+
+</html>
