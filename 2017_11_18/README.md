@@ -35,10 +35,12 @@
          若要区分animal到底是什么，需要使用 instanceof 来判断
          
          if(animal instanceof Dog){
-            animal.watchHouse(); //看家
+            Dog dog = (Dog)animal;
+            dog.watchHouse();
          }
          
          if(animal instanceof Cat){
-            animal.catchMice (); //捉老鼠
+            Cat cat = (Cat)animal;
+            cat.catchMice();
          }
          
