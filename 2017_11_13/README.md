@@ -29,7 +29,9 @@
                                       
 - switch分支语句
     
-        ☆注意：JDK1.6和以下的swict语句(),只能是byte short int  char类型进行分支判断
+        ☆注意：
+            JDK1.6和以下的swict语句(),只能是byte、short、int、char以及枚举类型，进行分支判断，不能是float，double和boolean类型。
+            JDK1.7以后支持String
         
 - 增强for
         
